@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f5;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: crosshair;
+}
+
+.title-container h1 {
+    color: #db7093;
+    font-size: 2rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    transform: rotate(45deg);
+    pointer-events: none;
+    animation: fadeOut 1s linear forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) scale(0);
+        opacity: 0;
+    }
+}
